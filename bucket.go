@@ -1,4 +1,3 @@
-
 package main
 
 import (
@@ -49,4 +48,3 @@ func (bucket *bucket) GetContactAndCalcDistance(target *KademliaID) []Contact {
 func (bucket *bucket) Len() int {
 	return bucket.list.Len()
 }
-

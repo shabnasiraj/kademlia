@@ -1,7 +1,9 @@
-
 package main
 
-const bucketSize = 20
+//import "fmt"
+
+
+const bucketSize = 3
 
 type RoutingTable struct {
 	me      Contact
@@ -20,6 +22,7 @@ func NewRoutingTable(me Contact) *RoutingTable {
 func (routingTable *RoutingTable) AddContact(contact Contact) {
 	bucketIndex := routingTable.getBucketIndex(contact.ID)
 	bucket := routingTable.buckets[bucketIndex]
+	//fmt.Println(bucketIndex)
 	bucket.AddContact(contact)
 }
 
@@ -62,4 +65,3 @@ func (routingTable *RoutingTable) getBucketIndex(id *KademliaID) int {
 
 	return IDLength*8 - 1
 }
-

@@ -1,4 +1,3 @@
-
 package main
 
 import (
@@ -55,4 +54,3 @@ func (candidates *ContactCandidates) Swap(i, j int) {
 func (candidates *ContactCandidates) Less(i, j int) bool {
 	return candidates.contacts[i].Less(&candidates.contacts[j])
 }
-

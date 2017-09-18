@@ -1,4 +1,3 @@
-
 package main
 
 type Network struct {
@@ -6,6 +5,7 @@ type Network struct {
 
 func Listen(ip string, port int) {
 	// TODO
+
 }
 
 func (network *Network) SendPingMessage(contact *Contact) {

@@ -1,12 +1,16 @@
 package main
 
 type Kademlia struct {
-routes *RoutingTable;
-NetworkId string;
 }
 
-func (kademlia *Kademlia) LookupContact(target *Contact) {
-	// TODO
+func NewKademlia() *Kademlia {
+	return &Kademlia{}
+}
+
+func (kademlia *Kademlia) LookupContact(target Contact, rt RoutingTable) []Contact{
+	rt.AddContact(target)
+	return rt.FindClosestContacts(target.ID, 20)
+
 }
 
 func (kademlia *Kademlia) LookupData(hash string) {
@@ -16,4 +20,3 @@ func (kademlia *Kademlia) LookupData(hash string) {
 func (kademlia *Kademlia) Store(data []byte) {
 	// TODO
 }
-
